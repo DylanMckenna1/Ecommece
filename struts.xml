@@ -1,0 +1,48 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+
+        <!-- register users -->
+        <action name="register" class="Register" method="registerUser">
+            <result name="success">registerSuccess.jsp</result>
+            <result name="error">register.jsp</result>
+        </action>
+
+        <!-- user login -->
+        <action name="login" class="Login" method="loginUser">
+            <result name="success">loginSuccess.jsp</result>
+            <result name="error">login.jsp</result>
+        </action>
+
+        <!-- User profile  -->
+        <action name="viewProfile" class="Profile" method="showProfile">
+            <result name="success">profile.jsp</result>
+        </action>
+
+        <!-- Add item -->
+        <action name="addItem" class="AddItem" method="submitItem">
+            <result name="success">itemAdded.jsp</result>
+            <result name="error">addItem.jsp</result>
+        </action>
+
+        <!-- Viewing all items -->
+        <action name="viewItems" class="ViewItems" method="displayItems">
+            <result name="success">items.jsp</result>
+        </action>
+
+        <!-- Place  bid -->
+        <action name="makeBid" class="Bid" method="placeBid">
+            <result name="success">bidSuccess.jsp</result>
+            <result name="error">bids.jsp</result>
+        </action>
+
+        <!-- Logout  -->
+        <action name="logout" class="Logout" method="endSession">
+            <result name="success">index.jsp</result>
+        </action>
+
+    </package>
+</struts>
